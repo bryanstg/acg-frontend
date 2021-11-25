@@ -1,0 +1,33 @@
+@import "./../variables.scss";
+
+.banner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-height: 4.625rem;
+    height: 13vh;
+    
+    background-color: $strong-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.banner__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10.125rem;
+    height: 1.75rem;
+
+    font-family: $main-font;
+    font-size: 1.125rem;
+    line-height: 22px;
+    font-style: normal;
+    font-weight: bold;
+    color: $soft-color;
+
+    border: 1px solid $soft-color;
+    background-color: $strong-color;
+    margin-left: 8vw;
+}
