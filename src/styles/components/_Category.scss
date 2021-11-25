@@ -3,7 +3,7 @@
 .categories-box {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     min-height: 50vh;
     height: auto;
 }
