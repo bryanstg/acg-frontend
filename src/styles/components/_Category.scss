@@ -1,0 +1,47 @@
+@import "./../variables.scss";
+
+.category {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    min-height:  3.125rem;
+    height: auto;
+    background-color: $strong-color;
+}
+.category__sep {
+    color: $soft-color;
+}
+.category__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125rem;
+    line-height: 21,8px;
+    font-family: $main-font;
+    font-weight: 700;
+    font-style: normal;
+    color: $soft-color;
+    text-align: center;
+    width: 20%;
+    max-width: 15rem;
+
+    &:first-child {
+        width: 10%;
+        border-left: 0;
+    }
+
+}
+.description {
+    width: 40%;
+}
+.category__button {
+    background-color: transparent;
+    border: none;
+    width: 1rem;
+    margin: 0 2.5%;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
