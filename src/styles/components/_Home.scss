@@ -3,7 +3,7 @@
 .home-box {
     display: flex;
     flex-flow: column nowrap;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     height: auto;
 }
@@ -45,6 +45,10 @@
     line-height: 1.375rem;
     color: $soft-color;
 }
+.welcome {
+    width: 100%;
+    background-color: $med-color;
+}
 .welcome__img {
     position: relative;
     width: 100vw;
@@ -52,13 +56,13 @@
     height: 45vh;
     max-height: 55rem;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
     background-size: cover;
     z-index: 3;
 }
 .welcome__vector {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 3.5rem;
     background-color: $med-color;
     z-index: 2;
@@ -70,3 +74,15 @@
     left: 10vw;
 } 
 
+@media only screen and (min-width: 680px) {
+    .welcome__img {
+        width: 65vw;
+        height: 55vh;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+    .welcome__vector--img {
+        left: 14vw;
+    }
+    
+}
