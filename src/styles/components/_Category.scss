@@ -1,5 +1,12 @@
 @import "./../variables.scss";
 
+.categories-box {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    min-height: 50vh;
+    height: auto;
+}
 .category {
     display: flex;
     justify-content: space-around;
@@ -27,7 +34,7 @@
     max-width: 15rem;
 
     &:first-child {
-        width: 10%;
+        width: 5%;
         border-left: 0;
     }
 
