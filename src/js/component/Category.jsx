@@ -12,19 +12,16 @@ export const Category = ({ category }) => {
 				className="category"
 				style={{
 					backgroundColor: `${activeProduct ? "#616364" : "#242424"}`
+				}}
+				onClick={() => {
+					setActiveProduct(prev => !prev);
 				}}>
 				<div className="category__info id">{`${category.id}`}</div>
 				<span className="category__sep">|</span>
 				<div className="category__info name">{`${category.name}`}</div>
 				<span className="category__sep">|</span>
 				<div className="category__info description">{`${category.description}`}</div>
-				<button
-					onClick={() => {
-						setActiveProduct(prev => !prev);
-					}}
-					className="category__button"
-					style={{ backgroundImage: `url(${Arrow})` }}
-				/>
+				<button className="category__button" style={{ backgroundImage: `url(${Arrow})` }} />
 			</div>
 			{activeProduct && (
 				<div className="products-box">
