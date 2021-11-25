@@ -1,0 +1,72 @@
+@import "./../variables.scss";
+
+.home-box {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+}
+.header-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3.5rem;
+    background-color: $med-color;
+}
+.call-to {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    width: 20rem;
+    height: 3rem;
+}
+.call-to__p {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1.0625rem;
+    font-size: 0.875rem;
+    color: $soft-color;
+
+    margin: 0;
+}
+.call-to__button {
+    width: 5.69rem;
+    height: 1.75rem;
+    background-color: transparent;
+    border: 1px solid $soft-color;
+
+    font-family: $main-font;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.375rem;
+    color: $soft-color;
+}
+.welcome__img {
+    position: relative;
+    width: 100vw;
+    min-height: 10rem;
+    height: 45vh;
+    max-height: 55rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 3;
+}
+.welcome__vector {
+    position: relative;
+    width: 100vw;
+    height: 3.5rem;
+    background-color: $med-color;
+    z-index: 2;
+}
+.welcome__vector--img {
+    width: 7rem;
+    position: absolute;
+    bottom: 18px;
+    left: 10vw;
+} 
+
