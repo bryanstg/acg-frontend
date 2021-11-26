@@ -4,15 +4,12 @@ import PropTypes from "prop-types";
 import Arrow from "./../../img/arrow.png";
 import { Product } from "./Product.jsx";
 
-export const Category = ({ category }) => {
+export const Category = ({ category, categories, setUpdate }) => {
 	const [activeProduct, setActiveProduct] = useState(false);
 	return (
 		<React.Fragment>
 			<div
-				className="category"
-				style={{
-					backgroundColor: `${activeProduct ? "#616364" : "#242424"}`
-				}}
+				className={`category ${activeProduct ? "category-open" : ""}`}
 				onClick={() => {
 					setActiveProduct(prev => !prev);
 				}}>
@@ -24,8 +21,8 @@ export const Category = ({ category }) => {
 				<button className="category__button" style={{ backgroundImage: `url(${Arrow})` }} />
 			</div>
 			{activeProduct && (
-				<div className="products-box">
-					<div className="product">
+				<div className={`${activeProduct ? "product-open product-box" : "product-box"}`}>
+					<div className={"product"}>
 						<div className="product__info p-id">{`ID`}</div>
 						<span className="product__sep">|</span>
 						<div className="product__info p-date">{`Fecha de creación`}</div>
@@ -41,7 +38,15 @@ export const Category = ({ category }) => {
 						<div className="product__info p-stock">{`Stock`}</div>
 					</div>
 					{category.products.map(product => {
-						return <Product product={product} categoryName={category.name} key={product.id} />;
+						return (
+							<Product
+								product={product}
+								category={category}
+								categories={categories}
+								key={product.id}
+								setUpdate={setUpdate}
+							/>
+						);
 					})}
 				</div>
 			)}
@@ -50,5 +55,7 @@ export const Category = ({ category }) => {
 };
 
 Category.propTypes = {
-	category: PropTypes.object
+	category: PropTypes.object,
+	categories: PropTypes.array,
+	setUpdate: PropTypes.func
 };

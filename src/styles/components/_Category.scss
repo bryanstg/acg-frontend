@@ -16,6 +16,10 @@
     height: auto;
     background-color: $strong-color;
     cursor: pointer;
+    transition: background-color 350ms ease-in-out;
+}
+.category-open {
+    background-color: #616364;
 }
 .category__sep {
     color: $soft-color;

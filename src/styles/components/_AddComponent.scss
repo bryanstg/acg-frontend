@@ -1,0 +1,70 @@
+@import "./../variables.scss";
+
+.add-category, .add-product {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    min-height: 50vh;
+    height: auto;
+    padding: 1rem 1rem;
+}
+.add-category__inputs, .add-product__select, .add-product__inputs {
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+    min-width: 15rem;
+    width: 45%;
+    max-width: 25rem;
+    margin: 0.5rem 0;
+}
+.add-category__inputs--input, .add-product__select, .add-product__inputs--input, .add-category__button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+    width: 100%;
+    padding: 0.1rem 0;
+    font-family: $secund-font;
+    font-size: 1rem;
+
+
+    input, select {
+        width: 100%;
+        height: 1.75rem;
+        padding: 0.1rem 0.5rem;
+        background-color: transparent;
+        color: $strong-color;
+        font-family: $secund-font;
+        border:  1px solid $strong-color;
+    
+        &:focus {
+            border: 0;
+            outline: solid 1px $strong-color;
+        }
+    }
+
+}
+.add-category__button, .add-product__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $strong-color;
+    margin: 0.5rem 0;
+    min-width: 15rem;
+    width: 45%;
+    max-width: 25rem;
+    font-family: $main-font;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    background-color: $soft-color;
+    transition: background-color 250ms ease-in, color 250ms ease-in;
+
+    &:hover {
+        background-color: $strong-color;
+        color: $soft-color;
+    }
+}

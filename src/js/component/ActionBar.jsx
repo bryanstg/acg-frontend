@@ -2,10 +2,28 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Search from "./../../img/search.png";
 
-export const ActionBar = ({ addProductActive }) => {
+export const ActionBar = ({
+	addProductActive,
+	setAddType,
+	categories,
+	setEditCategory,
+	editCategory,
+	setCategoryToUpdate
+}) => {
 	const [addNew, setAddNew] = useState(false);
 	const [addCategory, setAddCategory] = useState(false);
 	const [addProduct, setAddProduct] = useState(false);
+
+	const handleCategory = id => {
+		for (const category of categories) {
+			console.log(category);
+			if (category.id == id) {
+				setCategoryToUpdate(category);
+				setEditCategory(false);
+			}
+		}
+	};
+
 	return (
 		<React.Fragment>
 			<div className="action-bar">
@@ -21,12 +39,16 @@ export const ActionBar = ({ addProductActive }) => {
 					className="action-bar__add">
 					{"Add New"}
 				</button>
-				<div className="action-bar__search">
-					<label className="action-bar__search--icon" htmlFor="search">
-						<img src={Search} alt="search" width="16" />
-					</label>
-					<input id="search" type="text" className="action-bar__search--input" placeholder="Search..." />
-				</div>
+				<button
+					onClick={() => {
+						setEditCategory(true);
+						if (editCategory) {
+							setCategoryToUpdate(undefined);
+						}
+					}}
+					className="action-bar__add">
+					{"Edit Category"}
+				</button>
 			</div>
 			{addNew && (
 				<div className="add">
@@ -36,10 +58,13 @@ export const ActionBar = ({ addProductActive }) => {
 								addProductActive(false);
 								setAddNew(false);
 								setAddProduct(false);
+								setAddType(null);
 							} else {
 								addProductActive(true);
 								setAddProduct(false);
+								setAddType(2);
 							}
+							setEditCategory(false);
 							setAddCategory(prev => !prev);
 						}}
 						className="add__category">
@@ -51,10 +76,13 @@ export const ActionBar = ({ addProductActive }) => {
 								addProductActive(false);
 								setAddNew(false);
 								setAddCategory(false);
+								setAddType(null);
 							} else {
 								addProductActive(true);
 								setAddCategory(false);
+								setAddType(1);
 							}
+							setEditCategory(false);
 							setAddProduct(prev => !prev);
 						}}
 						className="add__product">
@@ -62,10 +90,44 @@ export const ActionBar = ({ addProductActive }) => {
 					</button>
 				</div>
 			)}
+			{editCategory && (
+				<div className="change">
+					<div className="add-categories__select">
+						<label htmlFor="categories-aval">{`Category`}</label>
+						<select
+							onClick={event => {
+								handleCategory(event.target.value);
+							}}
+							id="categories-aval"
+							type="text"
+							className="category__select">
+							<option className="category__select--option" defaultValue value={""}>
+								{`Select a category`}
+							</option>
+							{categories &&
+								categories.map(category => {
+									return (
+										<option
+											className="category__select--option"
+											value={category.id}
+											key={category.id}>
+											{`${category.name}`}
+										</option>
+									);
+								})}
+						</select>
+					</div>
+				</div>
+			)}
 		</React.Fragment>
 	);
 };
 
 ActionBar.propTypes = {
-	addProductActive: PropTypes.func
+	addProductActive: PropTypes.func,
+	setAddType: PropTypes.func,
+	setEditCategory: PropTypes.func,
+	editCategory: PropTypes.bool,
+	categories: PropTypes.array,
+	setCategoryToUpdate: PropTypes.func
 };
