@@ -1,0 +1,23 @@
+@import "./../variables.scss";
+
+
+.add-categories__select {
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    align-items: center;
+    min-width: 15rem;
+    width: 45%;
+    max-width: 25rem;
+    margin: 0 1rem;
+    color: $soft-color;
+    label {
+        margin-right: 1rem;
+    }
+}
+.edit-categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

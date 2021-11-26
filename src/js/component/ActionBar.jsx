@@ -91,7 +91,7 @@ export const ActionBar = ({
 				</div>
 			)}
 			{editCategory && (
-				<div className="change">
+				<div className="edit-categories">
 					<div className="add-categories__select">
 						<label htmlFor="categories-aval">{`Category`}</label>
 						<select
